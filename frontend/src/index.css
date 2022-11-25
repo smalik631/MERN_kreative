@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  background-color: rgb(59, 42, 42);
+  padding: 1rem; /*because it is responvise and 1 rem is = 16piexel */
+}
+header a {
+  color: bisque;
+  font-weight: bold;
+  text-decoration: none;
+}
