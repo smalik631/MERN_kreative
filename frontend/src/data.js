@@ -1,0 +1,53 @@
+const data = {
+  products: [
+    {
+      name: 'Light shade Cups',
+      p_key: 1,
+      category: 'Crockery',
+      image: '/images/p1.jpg',
+      price: 350,
+      countInStock: 20,
+      brand: 'Cups',
+      rating: 4.5,
+      numreviews: 10,
+      description: 'high quality cup',
+    },
+    {
+      name: 'Sillk Ties',
+      p_key: 2,
+      category: 'Hair Accessory',
+      image: '/images/p2.jpg',
+      price: 100,
+      countInStock: 10,
+      brand: 'Hairy',
+      rating: 4.5,
+      numreviews: 15,
+      description: 'high quality clips',
+    },
+    {
+      name: 'Painting',
+      p_key: 3,
+      category: 'Art',
+      image: '/images/p3.jpg',
+      price: 500,
+      countInStock: 7,
+      brand: 'Arts',
+      rating: 4.5,
+      numreviews: 24,
+      description: 'high quality painting',
+    },
+    {
+      name: 'Vase',
+      p_key: 4,
+      category: 'Vase',
+      image: '/images/p4.jpg',
+      price: 1000, //679px * 829px
+      countInStock: 30,
+      brand: 'vase',
+      rating: 4.5,
+      numreviews: 18,
+      description: 'high quality stuff',
+    },
+  ],
+};
+export default data;
