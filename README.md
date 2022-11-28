@@ -16,3 +16,11 @@
 4. then we only write npm start insted of writing node server.js
 
 5. fetch products from backend axios is use to fetch data from backend
+
+# manage complex state using usereduce
+
+1. replace user state with user reducer to manage complex state in homescreen
+
+2. useState is a basic Hook for managing simple state transformation, and useReducer is an additional Hook for managing more complex state logic.
+
+# install package for lock state changes
