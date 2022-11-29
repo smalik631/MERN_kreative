@@ -1,7 +1,9 @@
-import { useEffect, useReducer, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useReducer } from 'react';
 import axios from 'axios';
 import logger from 'use-reducer-logger';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Product from './components/Product';
 //import data from '../data';
 
 const reducer = (state, action) => {
@@ -62,25 +64,16 @@ function HomeScreen() {
           ) : error ? (
             <div>{error}</div>
           ) : (
-            products.map((product) => (
-              <div className="product" key={product.p_key}>
-                {/* link product image and name to product detail page */}
-                <Link to={`/product/${product.p_key}`}>
-                  {/* tag a refresh page each time to mae website single page we use
-              link tag link is component from react router DOM */}
-                  <img src={product.image} alt={product.name} />
-                </Link>
-                <div className="product-info">
-                  <Link to={`/product/${product.p_key}`}>
-                    <p>{product.name}</p>
-                  </Link>
-                  <p>
-                    <strong>Rs.{product.price}</strong>
-                  </p>
-                  <button>Add to Cart</button>
-                </div> 
-              </div>
-            ))
+            // using row and col to put items next to each other if there is
+            //no space it put item to next line we use sizes for different screens
+            //marging button to 3rem
+            <Row>
+              {products.map((product) => (
+                <Col key={product.p_key} sm={6} md={4} lg={3} className="mb-3">
+                  <Product product={product}></Product>
+                </Col>
+              ))}
+            </Row>
           )
         }
       </div>

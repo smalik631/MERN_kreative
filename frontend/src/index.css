@@ -33,6 +33,14 @@ main {
 .site-container {
   min-height: 100vh;
 }
+/*{ add to cart buttone */
+.btn-primary {
+  background-color: rgb(59, 42, 42);
+  color: bisque;
+}
+.rating span {
+  color: gold;
+}
 
 .products {
   display: flex;

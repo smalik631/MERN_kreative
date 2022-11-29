@@ -36,4 +36,8 @@
 
 # add footer
 
-1. dispaly to bottome because of bootstrap flex
+1. dispaly to botton because of bootstrap flex
+
+# convert product list
+
+1. product list div to bootstrap card to create box on product components and add rating
