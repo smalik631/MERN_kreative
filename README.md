@@ -23,4 +23,17 @@
 
 2. useState is a basic Hook for managing simple state transformation, and useReducer is an additional Hook for managing more complex state logic.
 
-# install package for lock state changes
+# install useReduce lagger package for lock state changes
+
+1. help to debug and find issue in state
+
+2. loading box and error resolve
+
+# Add react bootstrap
+
+1. install react bootstrap
+2. updating app.js
+
+# add footer
+
+1. dispaly to bottome because of bootstrap flex
