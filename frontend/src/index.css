@@ -7,18 +7,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
+/* header {
   background-color: rgb(59, 42, 42);
   padding: 1rem; /*because it is responvise and 1 rem is = 16piexel */
-}
+/* }
 header a {
   color: bisque;
   font-weight: bold;
   text-decoration: none;
-}
+} */
 
 main {
-  padding: 1rem;
+  /* padding: 1rem; */
+  flex: 1;
+}
+
+.color-nav {
+  background-color: rgb(59, 42, 42);
+}
+.kreative {
+  font-style: italic;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.site-container {
+  min-height: 100vh;
 }
 
 .products {
