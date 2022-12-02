@@ -20,8 +20,8 @@ const data = {
       price: 100,
       countInStock: 10,
       brand: 'Hairy',
-      rating: 4.5,
-      numreviews: 15,
+      rating: 3,
+      numreviews: 7,
       description: 'high quality clips',
     },
     {
@@ -32,7 +32,7 @@ const data = {
       price: 500,
       countInStock: 7,
       brand: 'Arts',
-      rating: 4.5,
+      rating: 4,
       numreviews: 24,
       description: 'high quality painting',
     },
@@ -44,7 +44,7 @@ const data = {
       price: 1000, //679px * 829px
       countInStock: 30,
       brand: 'vase',
-      rating: 4.5,
+      rating: 3.5,
       numreviews: 18,
       description: 'high quality stuff',
     },

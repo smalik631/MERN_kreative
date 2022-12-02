@@ -41,7 +41,9 @@ main {
 .rating span {
   color: gold;
 }
-
+.img-large {
+  max-width: 100%;
+}
 .products {
   display: flex;
   flex-wrap: wrap; /*if no space in a row new item push down in new row */

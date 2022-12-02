@@ -7,7 +7,21 @@ const app = express();
 app.get('/api/products', (req, res) => {
   res.send(data.products);
 });
-// define prot that we use in response for backend
+// returning product info based on product key
+app.get('/api/products/p_key/:p_key', (req, res) => {
+  // console.log('hello world');
+  const product = data.products.find((x) => x.p_key == req.params.p_key);
+  //console.log(product);
+  if (product) {
+    //console.log('data send');
+    res.send(product);
+  } else {
+    //console.log('hell');
+    res.status(404).send({ message: 'Product Not Found' });
+  }
+});
+
+// define port that we use in response for backend
 
 //process.eve.PORT is convention to access to the free port if not
 //found set to 5000 or any number

@@ -22,6 +22,7 @@
 1. replace user state with user reducer to manage complex state in homescreen
 
 2. useState is a basic Hook for managing simple state transformation, and useReducer is an additional Hook for managing more complex state logic.
+3. use logger if there is an isue in checking the state of the application.
 
 # install useReduce lagger package for lock state changes
 
@@ -41,3 +42,5 @@
 # convert product list
 
 1. product list div to bootstrap card to create box on product components and add rating
+
+# add product screen page

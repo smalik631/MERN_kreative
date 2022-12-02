@@ -3,7 +3,8 @@ import axios from 'axios';
 import logger from 'use-reducer-logger';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Product from './components/Product';
+import Product from '../components/Product';
+import { Helmet } from 'react-helmet-async';
 //import data from '../data';
 
 const reducer = (state, action) => {
@@ -29,7 +30,7 @@ function HomeScreen() {
   //we use objects and set theire values set loading to ture bcz for the first time we fetch data from backend
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
     products: [],
-    oading: true,
+    loading: true,
     error: '',
   });
 
@@ -54,6 +55,9 @@ function HomeScreen() {
   }, []); //empty array because we goning to run the use effect one time after renderin the component
   return (
     <div>
+      <Helmet>
+        <title>Kreative</title>
+      </Helmet>
       <h1>Featured Products</h1>
       {/* style pruducts next to each other */}
       <div className="products">

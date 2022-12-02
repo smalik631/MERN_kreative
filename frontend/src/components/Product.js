@@ -6,7 +6,7 @@ import Rating from './Rating';
 function Product(props) {
   const { product } = props;
   return (
-    // card creatr box on screen fro each item
+    // card creatr box on screen for each item
     <Card>
       {/* link product image and name to product detail page */}
       <Link to={`/product/${product.p_key}`}>
@@ -18,7 +18,7 @@ function Product(props) {
         <Link to={`/product/${product.p_key}`}>
           <Card.Title>{product.name}</Card.Title>
         </Link>
-        <Rating rating={product.rating} numReviewa={product.numReviews} />
+        <Rating rating={product.rating} numreviews={product.numreviews} />
         <Card.Text>Rs.{product.price}</Card.Text>
         <Button>Add to Cart</Button>
       </Card.Body>
