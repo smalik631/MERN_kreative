@@ -43,4 +43,18 @@
 
 1. product list div to bootstrap card to create box on product components and add rating
 
-# add product screen page
+# add loading component
+
+1. that show loading spinner
+2. show message box if product not found
+
+# add loading component in productscreen
+
+1. return error to the backend making utils file and getError function
+
+# add to cart functionality
+
+1. Redux implementation 2. create react context and store provider to save items in cart in global state and use them in navbar
+
+2. context provides a way to pass data through the components tree without having to pass props down manually at every level.
+3. Context is designed to share data that can be considered “global” for a tree of React components

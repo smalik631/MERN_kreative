@@ -5,6 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Product from '../components/Product';
 import { Helmet } from 'react-helmet-async';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 //import data from '../data';
 
 const reducer = (state, action) => {
@@ -56,7 +58,7 @@ function HomeScreen() {
   return (
     <div>
       <Helmet>
-        <title>Kreative</title>
+        <title>Kreative </title>
       </Helmet>
       <h1>Featured Products</h1>
       {/* style pruducts next to each other */}
@@ -64,9 +66,10 @@ function HomeScreen() {
         {
           //loading ture
           loading ? (
-            <div>Loading....</div>
+            <LoadingBox />
           ) : error ? (
-            <div>{error}</div>
+            // <div>{error}</div>
+            <MessageBox variant="danger">{error}</MessageBox>
           ) : (
             // using row and col to put items next to each other if there is
             //no space it put item to next line we use sizes for different screens

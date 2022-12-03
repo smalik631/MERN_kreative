@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useReducer } from 'react';
+import { useContext, useEffect, useReducer } from 'react';
 import axios from 'axios';
 import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
@@ -9,6 +9,10 @@ import Rating from '../components/Rating';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/esm/Button';
 import { Helmet } from 'react-helmet-async';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
+import { getError } from '../utils';
+import { Store } from '../Store';
 //fetch product from backend so
 const reducer = (state, action) => {
   // define switch case and type of action
@@ -52,11 +56,25 @@ function ProductScreen() {
         const result = await axios.get(`/api/products/p_key/${p_key}`);
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: err.message });
+        //  getError from utils file
+        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
     };
     fetchData();
   }, [p_key]);
+
+  //  use useContext() to have access to the state of the context
+  // and change the context
+  //const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const addToCartHandler = () => {
+    // add item to the cart for this first
+    //we need the context
+    ctxDispatch({
+      type: 'CART_ADD_ITEM',
+      payload: { ...product, quantity: 1 },
+    });
+  };
 
   return (
     // <div>
@@ -64,9 +82,10 @@ function ProductScreen() {
     // </div>
 
     loading ? (
-      <div>Loading...</div>
+      <LoadingBox />
     ) : error ? (
-      <div>{error}</div>
+      // <div>{error}</div>
+      <MessageBox variant="danger">{error}</MessageBox>
     ) : (
       <div>
         <Row>
@@ -124,7 +143,9 @@ function ProductScreen() {
                   {product.countInStock > 0 && (
                     <ListGroup.Item>
                       <div className="d-grid">
-                        <Button variant="primary">Add to cart</Button>
+                        <Button onClick={addToCartHandler} variant="primary">
+                          Add to Cart
+                        </Button>
                       </div>
                     </ListGroup.Item>
                   )}
