@@ -9,6 +9,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { Store } from './Store';
+import CartScreen from './screens/CartScreen';
 function App() {
   const { state } = useContext(Store);
   const { cart } = state;
@@ -51,6 +52,7 @@ function App() {
               {/* define first route for this we need two attributes first the path user enter in url for HomeScreen
             we need to define componenet that responds to this path, for this we define element attribute and set it to JSX  */}
               <Route path="/" element={<HomeScreen />} />
+              <Route path="/cart" element={<CartScreen />} />
             </Routes>
           </Container>
         </main>

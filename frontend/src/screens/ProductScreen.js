@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useContext, useEffect, useReducer } from 'react';
 import axios from 'axios';
 import Col from 'react-bootstrap/esm/Col';
@@ -31,6 +31,7 @@ const reducer = (state, action) => {
   }
 };
 function ProductScreen() {
+  const navigate = useNavigate();
   // we could access that particular string or value
   // in the route by calling the ***useParams*** hook.
   // then id would equal that string. This can be
@@ -83,6 +84,8 @@ function ProductScreen() {
       type: 'CART_ADD_ITEM',
       payload: { ...product, quantity },
     });
+    //redirect user to cartscreen
+    navigate('/cart');
   };
 
   return (
