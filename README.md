@@ -95,3 +95,5 @@
 
 1. create user model
 2. admin and user
+3. create user routes
+4. install json web token
