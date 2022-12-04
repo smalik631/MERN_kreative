@@ -60,3 +60,5 @@
 3. Context is designed to share data that can be considered “global” for a tree of React components
 
 4. imporve cart functionality to not add duplicate to the cart but increase the quantity.
+
+# Add Cart Screen
