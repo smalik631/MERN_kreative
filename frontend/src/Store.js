@@ -6,6 +6,9 @@ export const Store = createContext();
 //and pass globle props to children
 
 const initialState = {
+  userInfo: localStorage.getItem('userInfo')
+    ? JSON.parse(localStorage.getItem('userInfo'))
+    : null,
   cart: {
     //cartItems come fromlocal storage
     //that check if cartItems exist in local storage
@@ -51,6 +54,16 @@ function reducer(state, action) {
       localStorage.setItem('cartItems', JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
     }
+    case 'USER_SIGNIN': {
+      //keep prev state and update userinfo with data we get from backend
+      return { ...state, userInfo: action.payload };
+    }
+
+    case 'USER_SIGNOUT': {
+      //keep prev state and update userinfo to null
+      return { ...state, userInfo: null };
+    }
+
     default:
       return state;
   }

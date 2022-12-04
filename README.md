@@ -97,3 +97,5 @@
 2. admin and user
 3. create user routes
 4. install json web token
+5. implement sigin
+6. login user name to header after signin
