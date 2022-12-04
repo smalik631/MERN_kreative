@@ -27,7 +27,7 @@ productRouter.get('/p_key/:p_key', async (req, res) => {
   }
 });
 
-//
+//cart
 productRouter.get('/:id', async (req, res) => {
   // console.log('hello world');
   const product = await Product.findById(req.params.id);

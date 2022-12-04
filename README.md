@@ -90,3 +90,8 @@
 
 1. seed sample product in mongodb
 2. get data fron mongodb
+
+# sample users
+
+1. create user model
+2. admin and user
