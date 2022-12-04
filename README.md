@@ -58,3 +58,5 @@
 
 2. context provides a way to pass data through the components tree without having to pass props down manually at every level.
 3. Context is designed to share data that can be considered “global” for a tree of React components
+
+4. imporve cart functionality to not add duplicate to the cart but increase the quantity.

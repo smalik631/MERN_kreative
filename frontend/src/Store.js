@@ -14,17 +14,21 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case 'CART_ADD_ITEM':
-      // add to cart
-      // keep all the previouse state in ...state
-      // then in cart we keep all previous state in cart and only update
-      //cartitem that also conatian previous and add new one as action.payload
-      return {
-        ...state,
-        cart: {
-          ...state.cart,
-          cartItems: [...state.cart.cartItems, action.payload],
-        },
-      };
+      //to resolve the issue of adding same product multiple time
+      const newItem = action.payload;
+      const existItem = state.cart.cartItems.find(
+        (item) => item.p_key === newItem.p_key
+      );
+      //if existItem already in cart we use map function to  update the current
+      //item with newitem other keep the previouse item in cart
+      const cartItems = existItem
+        ? state.cart.cartItems.map((item) =>
+            item._id === existItem._id ? newItem : item
+          )
+        : //if existitem is null means new item added in end of array
+          [...state.cart.cartItems, newItem];
+      //update cartitem
+      return { ...state, cart: { ...state.cart, cartItems } };
 
     default:
       return state;

@@ -1,8 +1,9 @@
 const data = {
   products: [
     {
+      _id: '1',
       name: 'Light shade Cups',
-      p_key: 1,
+      p_key: 'cups',
       category: 'Crockery',
       image: '/images/p1.jpg',
       price: 350,
@@ -13,8 +14,9 @@ const data = {
       description: 'high quality cup',
     },
     {
+      _id: '2',
       name: 'Sillk Ties',
-      p_key: 2,
+      p_key: 'hair_Acc',
       category: 'Hair Accessory',
       image: '/images/p2.jpg',
       price: 100,
@@ -25,8 +27,9 @@ const data = {
       description: 'high quality clips',
     },
     {
+      _id: '3',
       name: 'Painting',
-      p_key: 3,
+      p_key: 'Art',
       category: 'Art',
       image: '/images/p3.jpg',
       price: 500,
@@ -37,8 +40,9 @@ const data = {
       description: 'high quality painting',
     },
     {
+      _id: '4',
       name: 'Vase',
-      p_key: 4,
+      p_key: 'vase',
       category: 'Vase',
       image: '/images/p4.jpg',
       price: 1000, //679px * 829px
