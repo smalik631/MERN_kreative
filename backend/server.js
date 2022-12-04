@@ -2,6 +2,8 @@ import express from 'express';
 import data from './data.js';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import seedRouter from './routes/seedRoutes.js';
+import productRouter from './routes/productRoutes.js';
 
 // to fetch variables in the env File
 dotenv.config();
@@ -15,39 +17,9 @@ mongoose
     console.log(err.message);
   });
 const app = express();
-// app.get contain 2 parameters first the url thst is going to
-//serve and second parameter is the function that respond
-//to this url
-app.get('/api/products', (req, res) => {
-  res.send(data.products);
-});
-// returning product info based on product key
-app.get('/api/products/p_key/:p_key', (req, res) => {
-  // console.log('hello world');
-  const product = data.products.find((x) => x.p_key == req.params.p_key);
-  //console.log(product);
-  if (product) {
-    //console.log('data send');
-    res.send(product);
-  } else {
-    //console.log('hell');
-    res.status(404).send({ message: 'Product Not Found' });
-  }
-});
 
-//
-app.get('/api/products/:id', (req, res) => {
-  // console.log('hello world');
-  const product = data.products.find((x) => x._id === req.params.id);
-  //console.log(product);
-  if (product) {
-    //console.log('data send');
-    res.send(product);
-  } else {
-    //console.log('hell');
-    res.status(404).send({ message: 'Product Not Found' });
-  }
-});
+app.use('/api/seed', seedRouter);
+app.use('/api/products', productRouter);
 
 // define port that we use in response for backend
 

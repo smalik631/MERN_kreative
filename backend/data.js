@@ -1,7 +1,8 @@
 const data = {
   products: [
     {
-      _id: '1',
+      //_id assign automatically by mongodb
+      //_id: '1',
       name: 'Light shade Cups',
       p_key: 'cups',
       category: 'Crockery',
@@ -14,7 +15,7 @@ const data = {
       description: 'high quality cup',
     },
     {
-      _id: '2',
+      // _id: '2',
       name: 'Sillk Ties',
       p_key: 'hair_Acc',
       category: 'Hair Accessory',
@@ -27,7 +28,7 @@ const data = {
       description: 'high quality clips',
     },
     {
-      _id: '3',
+      //_id: '3',
       name: 'Painting',
       p_key: 'Art',
       category: 'Art',
@@ -40,7 +41,7 @@ const data = {
       description: 'high quality painting',
     },
     {
-      _id: '4',
+      //_id: '4',
       name: 'Vase',
       p_key: 'vase',
       category: 'Vase',

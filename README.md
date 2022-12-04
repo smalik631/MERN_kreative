@@ -85,3 +85,8 @@
 2. create atlas mongodb
 3. install local mongodb
 4. connect to locaal or compass mongodb
+
+# seed sample product
+
+1. seed sample product in mongodb
+2. get data fron mongodb
