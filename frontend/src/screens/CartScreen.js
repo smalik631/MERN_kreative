@@ -37,7 +37,7 @@ export default function CartScreen() {
   };
 
   const checkouthandler = () => {
-    navigate('/signin?redirect=/sgipping');
+    navigate('/signin?redirect=/shipping');
   };
 
   return (
@@ -115,6 +115,7 @@ export default function CartScreen() {
                 <ListGroup.Item>
                   <div className="d-grid">
                     <Button
+                      class="btn"
                       type="button"
                       variant="primary"
                       disabled={cartItems.length === 0}

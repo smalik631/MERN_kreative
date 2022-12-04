@@ -48,6 +48,17 @@ main {
 .img-thumbnail {
   height: 80px;
 }
+
+.btn:hover {
+  background-color: gold;
+  color: rgb(59, 42, 42);
+  font-weight: bold;
+}
+
+.small-container {
+  max-width: 600px;
+}
+
 .products {
   display: flex;
   flex-wrap: wrap; /*if no space in a row new item push down in new row */
