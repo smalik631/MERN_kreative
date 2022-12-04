@@ -7,7 +7,14 @@ export const Store = createContext();
 
 const initialState = {
   cart: {
-    cartItems: [],
+    //cartItems come fromlocal storage
+    //that check if cartItems exist in local storage
+    //use JASON.parse to convert the string to javascript object
+    //otherwise set it to empty array
+
+    cartItems: localStorage.getItem('cartItems')
+      ? JSON.parse(localStorage.getItem('cartItems'))
+      : [],
   },
 };
 
@@ -27,9 +34,23 @@ function reducer(state, action) {
           )
         : //if existitem is null means new item added in end of array
           [...state.cart.cartItems, newItem];
+
+      // save item in local storage so on refresh item store on loal storage
+      // 2 parameters one is key = cartItems and  second is string value that save in key in local storage
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
       //update cartitem
       return { ...state, cart: { ...state.cart, cartItems } };
-
+    case 'CART_REMOVE_ITEM': {
+      //filter find current item in cartItems
+      //array if found remove it otherwise return it
+      const cartItems = state.cart.cartItems.filter(
+        (item) => item._id !== action.payload._id
+      );
+      // save item in local storage so on refresh item store on loal storage
+      // 2 parameters one is key = cartItems and  second is string value that save in key in local storage
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      return { ...state, cart: { ...state.cart, cartItems } };
+    }
     default:
       return state;
   }

@@ -62,3 +62,17 @@
 4. imporve cart functionality to not add duplicate to the cart but increase the quantity.
 
 # Add Cart Screen
+
+1. redirect product scrren to cart screen
+
+# add to cart functionality
+
+1. click handler for increment and decrement
+2. click hadler for delete item
+3. proceed to checkout handler
+4. save cart item to local storage
+
+# add to cart functionality to home screen
+
+1. naviagtor use
+2. save items in local storage

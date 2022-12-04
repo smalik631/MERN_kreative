@@ -77,6 +77,8 @@ function ProductScreen() {
     const { data } = await axios.get(`/api/products/${product._id}`);
     if (data.countInStock < quantity) {
       window.alert('Sorry. Product is out of stock');
+      //console.log('Sorry. Product is out of stock');
+      return;
     }
     // add item to the cart for this first
     //we need the context
