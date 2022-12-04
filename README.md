@@ -78,3 +78,10 @@
 2. save items in local storage
 
 # Create signin screen
+
+# create mongoDB
+
+1. connect with backend(cloud server)
+2. create atlas mongodb
+3. install local mongodb
+4. connect to locaal or compass mongodb

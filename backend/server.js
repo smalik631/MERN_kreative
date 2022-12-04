@@ -1,5 +1,19 @@
 import express from 'express';
 import data from './data.js';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+// to fetch variables in the env File
+dotenv.config();
+// DOTENV.CONFIGE LOADED value in env file to process.env
+mongoose
+  .connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log('connected to db ');
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
 const app = express();
 // app.get contain 2 parameters first the url thst is going to
 //serve and second parameter is the function that respond
