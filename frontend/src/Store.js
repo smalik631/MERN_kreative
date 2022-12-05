@@ -10,6 +10,10 @@ const initialState = {
     ? JSON.parse(localStorage.getItem('userInfo'))
     : null,
   cart: {
+    shippingAddress: localStorage.getItem('shippingAddress')
+      ? JSON.parse(localStorage.getItem('shippingAddress'))
+      : {},
+
     //cartItems come fromlocal storage
     //that check if cartItems exist in local storage
     //use JASON.parse to convert the string to javascript object
@@ -61,7 +65,24 @@ function reducer(state, action) {
 
     case 'USER_SIGNOUT': {
       //keep prev state and update userinfo to null
-      return { ...state, userInfo: null };
+      return {
+        ...state,
+        userInfo: null,
+        cart: {
+          cartItems: [],
+          shippingAddress: {},
+        },
+      };
+    }
+
+    case 'SAVE_SHIPPING_ADDRESS': {
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          shippingAddress: action.payload,
+        },
+      };
     }
 
     default:
