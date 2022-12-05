@@ -103,3 +103,4 @@
 # shipping address screen
 
 1. create sihnup
+2. implement payments method

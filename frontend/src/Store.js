@@ -14,6 +14,10 @@ const initialState = {
       ? JSON.parse(localStorage.getItem('shippingAddress'))
       : {},
 
+    paymentMethod: localStorage.getItem('paymentmethod')
+      ? localStorage.getItem('paymentMethod')
+      : '', // json.parse is not use becaus its a string
+
     //cartItems come fromlocal storage
     //that check if cartItems exist in local storage
     //use JASON.parse to convert the string to javascript object
@@ -71,6 +75,7 @@ function reducer(state, action) {
         cart: {
           cartItems: [],
           shippingAddress: {},
+          paymentMethod: '',
         },
       };
     }
@@ -81,6 +86,16 @@ function reducer(state, action) {
         cart: {
           ...state.cart,
           shippingAddress: action.payload,
+        },
+      };
+    }
+
+    case 'SAVE_PAYMENT_METHOD': {
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          paymentMethod: action.payload,
         },
       };
     }
