@@ -34,7 +34,8 @@ main {
   min-height: 100vh;
 }
 /*{ add to cart buttone */
-.btn-primary {
+.btn-primary,
+.btn-outline-primary {
   background-color: rgb(59, 42, 42);
   color: bisque;
 }
@@ -68,7 +69,31 @@ main {
   border-bottom: 0.2rem solid #f08000;
   color: #f08000;
 }
+/* //sidebar */
 
+.navbar-brand {
+  font-weight: bold;
+}
+
+.side-navbar {
+  width: 240px;
+  height: 100%;
+  position: absolute;
+  left: -300px; /*invisible */
+  background-color: rgb(59, 42, 42);
+  transition: 0.5s;
+}
+
+.site-container {
+  transition: 0.4s;
+}
+
+.active-cont {
+  margin-left: 240px;
+}
+.active-nav {
+  left: 0; /*visible */
+}
 .products {
   display: flex;
   flex-wrap: wrap; /*if no space in a row new item push down in new row */
@@ -84,4 +109,9 @@ main {
 }
 .product-info {
   padding: 1rem;
+}
+
+#categories {
+  color: bisque;
+  text-decoration: none;
 }

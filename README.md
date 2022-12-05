@@ -108,3 +108,4 @@
 4. order screen
    payment method
    profile screen
+   add side bar and search option
