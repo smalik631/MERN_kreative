@@ -11,6 +11,7 @@ import { Store } from '../Store';
 import { getError } from '../utils';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/esm/Button';
 
 // console.log('hello');
 function reducer(state, action) {
@@ -178,6 +179,13 @@ export default function OrderScreen() {
                     </Col>
                   </Row>
                 </ListGroup.Item>
+                {!order.isPaid && (
+                  <ListGroup.Item>
+                    <div className="mt-4  text-center">
+                      <Button>{order.paymentMethod}</Button>
+                    </div>
+                  </ListGroup.Item>
+                )}
               </ListGroup>
             </Card.Body>
           </Card>

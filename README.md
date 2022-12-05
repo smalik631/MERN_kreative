@@ -106,3 +106,4 @@
 2. implement payments method
 3. place Order implementation
 4. order screen
+   payment method
