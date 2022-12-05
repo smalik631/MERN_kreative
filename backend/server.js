@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import seedRouter from './routes/seedRoutes.js';
 import productRouter from './routes/productRoutes.js';
 import userRouter from './routes/userRoutes.js';
+import orderRouter from './routes/orderRoutes.js';
 
 // to fetch variables in the env File
 dotenv.config();
@@ -28,6 +29,7 @@ app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
 
 app.use('/api/users', userRouter);
+app.use('/api/orders', orderRouter);
 
 // like a middelware that accept four parameters
 //when erro occur in expressAsynHandle in userroutes the below code run and error
