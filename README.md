@@ -104,3 +104,4 @@
 
 1. create sihnup
 2. implement payments method
+3. place Order implementation
