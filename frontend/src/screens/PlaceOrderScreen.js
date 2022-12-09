@@ -192,13 +192,15 @@ export default function PlaceOrderScreen() {
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <Button
-                    type="button"
-                    onClick={placeOrderHandler}
-                    disabled={cart.cartItems.length === 0}
-                  >
-                    Place Order
-                  </Button>
+                  <div className="mt-4  text-center">
+                    <Button
+                      type="button"
+                      onClick={placeOrderHandler}
+                      disabled={cart.cartItems.length === 0}
+                    >
+                      Place Order
+                    </Button>
+                  </div>
                   <div>{loading && <LoadingBox></LoadingBox>}</div>
                 </ListGroup.Item>
               </ListGroup>

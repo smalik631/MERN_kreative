@@ -26,6 +26,9 @@ import Button from 'react-bootstrap/Button';
 import { getError } from './utils.js';
 import axios from 'axios';
 import SearchBox from './components/SearchBox';
+import SearchScreen from './screens/SearchScreen';
+import ProtectedRoute from './components/Protectedroutes';
+
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
@@ -164,15 +167,41 @@ function App() {
               {/* define first route for this we need two attributes first the path user enter in url for HomeScreen
             we need to define componenet that responds to this path, for this we define element attribute and set it to JSX  */}
               <Route path="/" element={<HomeScreen />} />
+
               <Route path="/cart" element={<CartScreen />} />
+              <Route path="/search" element={<SearchScreen />} />
+
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/signup" element={<SignupScreen />} />
               <Route path="/shipping" element={<ShippingAddressScreen />} />
               <Route path="/payment" element={<PaymentMethodScreen />} />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
-              <Route path="/order/:id" element={<OrderScreen />} />
-              <Route path="/orderhistory" element={<Orderhistory />} />
-              <Route path="/profile" element={<ProfileScreen />} />
+              <Route
+                path="/orderhistory"
+                element={
+                  <ProtectedRoute>
+                    <Orderhistory />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/order/:id"
+                element={
+                  <ProtectedRoute>
+                    <OrderScreen />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                // need authentication
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    {' '}
+                    <ProfileScreen />
+                  </ProtectedRoute>
+                }
+              />
             </Routes>
           </Container>
         </main>
